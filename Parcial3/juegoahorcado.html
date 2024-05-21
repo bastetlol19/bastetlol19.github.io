@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahorcado</title>
+    <style>
+        #myCanvas {
+            border: 1px solid #000000;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ahorcado </h1>
+    <p>Ingrese una letra: <input type="text" id="inputLetra" maxlength="1"></p>
+    <p><button onclick="adivinarPalabra()">Adivinar</button></p>
+    <p><button onclick="limpiar()">Borrar</button></p>
+    <p id="palabra"></p>
+    <canvas id="myCanvas" width="400" height="400"></canvas>
+
+    <script>
+        let palabraAdivinar = "hola";
+        let letrasAdivinadas = Array(palabraAdivinar.length).fill('_');
+        let intentosFallidos = 0;
+
+        function dibujar() {
+            const canvas = document.getElementById("myCanvas");
+            const ctx = canvas.getContext("2d");
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        }
+
+        function adivinarPalabra() {
+            let letra = document.getElementById("inputLetra").value.toLowerCase(); // Convertir a minúscula para comparar
+            if (palabraAdivinar.includes(letra)) {
+                for(let i = 0; i < palabraAdivinar.length; i++) {
+                    if(palabraAdivinar[i] === letra) {
+                        letrasAdivinadas[i] = letra;
+                    }
+                }
+                document.getElementById("palabra").innerText = letrasAdivinadas.join(' ');
+                if (!letrasAdivinadas.includes('_')) {
+                    alert("¡Has adivinado la palabra!");
+                }
+            } else {
+                intentosFallidos++;
+                dibujarParte(intentosFallidos);
+            }
+            document.getElementById("inputLetra").value = "";
+        }
+
+        function dibujarParte(intentosFallidos) {
+            const canvas = document.getElementById("myCanvas");
+            const ctx = canvas.getContext("2d");
+            switch (intentosFallidos) {
+                case 1:
+                    // Dibuja la cabeza
+                    ctx.beginPath();
+                    ctx.arc(200, 50, 20, 0, 2 * Math.PI);
+                    ctx.stroke();
+                    break;
+                case 2:
+                    // Dibuja el cuerpo
+                    ctx.beginPath();
+                    ctx.moveTo(200, 70);
+                    ctx.lineTo(200, 170);
+                    ctx.stroke();
+                    break;
+                case 3:
+                    // Dibuja el brazo izquierdo
+                    ctx.beginPath();
+                    ctx.moveTo(200, 90);
+                    ctx.lineTo(150, 130);
+                    ctx.stroke();
+                    break;
+                case 4:
+                    // Dibuja el brazo derecho
+                    ctx.beginPath();
+                    ctx.moveTo(200, 90);
+                    ctx.lineTo(250, 130);
+                    ctx.stroke();
+                    break;
+                case 5:
+                    // Dibuja la pierna izquierda
+                    ctx.beginPath();
+                    ctx.moveTo(200, 170);
+                    ctx.lineTo(160, 230);
+                    ctx.stroke();
+                    break;
+                case 6:
+                    // Dibuja la pierna derecha
+                    ctx.beginPath();
+                    ctx.moveTo(200, 170);
+                    ctx.lineTo(240, 230);
+                    ctx.stroke();
+                    alert("Has perdido. La palabra era: " + palabraAdivinar);
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        function limpiar() {
+            const canvas = document.getElementById("myCanvas");
+            const ctx = canvas.getContext("2d");
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            intentosFallidos = 0;
+            letrasAdivinadas = Array(palabraAdivinar.length).fill('_');
+            document.getElementById("palabra").innerText = letrasAdivinadas.join(' ');
+        }
+    </script>
+</body>
+</html>

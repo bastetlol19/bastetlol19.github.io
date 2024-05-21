@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Conversor de Temperatura</title>
+  <script type="text/javascript">
+    function convertirTemperatura() {
+      var temperatura = parseInt(document.forms[0].Temperatura.value);
+      var conversion = document.forms[0].Convertir.value;
+      
+      var resultado;
+      
+      if (conversion === "fahrenheit") {
+        resultado = (temperatura * 9/5) + 32 + " °F";
+      } else if (conversion === "kelvin") {
+        resultado = temperatura + 273.15 + " K";
+      }
+      
+      resultado
+      document.write("<td>");
+        document.write(resultado);
+        document.write("</td>");
+     
+      return false;
+    }
+  </script>
+</head>
+<body>
+  <h2>Conversor de Temperatura</h2>
+  <form onsubmit="return convertirTemperatura();">
+    <p>C°: <input id="Temperatura" name="Temperatura" type="text" /></p>
+    <p>Convertir a:
+      <select id="Convertir" name="Convertir">
+        <option value="fahrenheit">Fahrenheit</option>
+        <option value="kelvin">Kelvin</option>
+      </select>
+    </p>
+    <button type="submit">Convertir</button>
+  </form>
+  <div id="resultado"></div>
+</body>
+</html>

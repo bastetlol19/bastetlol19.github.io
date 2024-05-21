@@ -1,0 +1,26 @@
+<html>
+<head>
+  <title>Bienvenida del usuario</title>
+  <script type = "text/javascript">
+  function alertName() 
+  {
+    var cuenta1= document.forms[0].cuenta.value;
+    var contra1= document.forms[0].contra.value;
+    
+    if((cuenta1=="admin") && (contra1=="admin"))
+    {
+      document.write("Acceso Permitido");
+    } else document.write("Acceso NO Permitido");
+    return true;
+
+  }
+  </script>
+</head>
+<body>
+<form id="myform" onsubmit="return alertName();">
+<p>User: <input id="cuenta" name="cuenta" type="text"/></p>
+<p>Password: <input id="contra" name="contra" type="password"/></p>
+<p><input type="submit" /></p>
+</form>
+</body>
+</html>

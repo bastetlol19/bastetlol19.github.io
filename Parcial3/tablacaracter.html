@@ -1,0 +1,34 @@
+<html>
+<head>
+  <title>Bienvenida del usuario</title>
+  <script type = "text/javascript">
+
+  function alertName() {
+
+    var filas1= parseInt(document.forms[0].filas.value);
+    var columnas1= parseInt(document.forms[0].columnas.value);
+    
+    document.write("<table border=1>");
+    for(i=1;i<=filas1;i++)
+    {
+      for(j=1;j<=columnas1;j++)
+      {
+        document.write("<td>SB</td>");
+      }
+      document.write("</tr>")
+    }
+    document.write("</table>");
+    
+    return true;
+  }
+
+  </script>
+</head>
+<body>
+<form id="myform" onsubmit="return alertName();">
+<p>Filas<input id="filas" name="filas" type="text" /></p>
+<p>Columnas<input id="columnas" name="columnas" type="text" /></p>
+<p><input type="submit" /></p>
+</form>
+</body>
+</html>

@@ -1,0 +1,79 @@
+body {
+  background-color: hwb(182 14% 21%);
+  font-family: sans-serif;
+}
+.img1 {
+  border: 8px solid rgb(255, 81, 0); 
+  padding: 8px; 
+  background-color: rgb(245, 249, 0); 
+  width: 170px;
+  height: 130px;
+  margin-left: 10px;
+  float: left; 
+  margin-right: 10px; 
+}
+.img2 {
+  border: 8px solid rgb(245, 249, 0); 
+  padding: 8px;
+  background-color: rgb(255, 81, 0); 
+  width: 170px;
+  height: 130px;
+  margin-right: 10px;
+  float: right; 
+  margin-left: 10px; 
+}
+.img3 {
+  border: 8px solid rgb(255, 81, 0); 
+  padding: 8px; 
+  background-color: rgb(245, 249, 0);
+  width: 170px;
+  height: 130px;
+  margin-left: 10px;
+  float: left; 
+  margin-right: 10px; 
+}
+.img4 {
+  border: 8px solid rgb(245, 249, 0); 
+  padding: 8px; 
+  background-color: rgb(255, 81, 0); 
+  width: 170px;
+  height: 130px;
+  margin-right: 10px;
+  float: right; 
+  margin-left: 10px; 
+}
+.museo1, .museo3 {
+  border: 8px solid rgb(255, 81, 0);
+  margin-top: 25px;
+  margin-bottom: 25px;
+  background-color: white;
+  padding: 12px;
+  overflow: hidden; 
+}
+.museo2, .museo4 {
+  border: 8px solid rgb(245, 249, 0);
+  margin-top: 25px;
+  margin-bottom: 25px;
+  background-color: white;
+  padding: 12px; 
+  overflow: hidden; 
+}
+.centro{
+    text-align: center;
+    color: hwb(182 10% 67%);
+}
+.parrafo{
+    text-align: center;
+}
+a:link {
+color: rgb(255, 81, 0);
+}
+a:visited {
+color: rgb(255, 81, 0);
+}
+a:hover {
+color: hotpink;
+}
+a:active {
+color: blue;
+}

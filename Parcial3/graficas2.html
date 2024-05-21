@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+<body>
+<canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+<script>
+const xValues = ["Progra 1", "Fisica I", "Progra Web I", "Nucleo 2", "Matematicas 1","Proba y estadistica"];
+let yValues=[0,0,0,0,0,0];
+for(i=0;i<6;i++)
+    {
+        yValues[i]=Math.floor(Math.random()*100+1);
+    }
+const barColors = ["rgba(255,0,0,0.6)", "green","blue","orange","brown", "black"];
+new Chart("myChart", {
+ type: "bar",
+ data: {
+ labels: xValues,
+ datasets: [{
+ backgroundColor: barColors,
+ data: yValues
+ }]
+ },
+ options: {
+ legend: {display: true},
+ title: {
+ display: true,
+ text: "Predicción calificaciones"
+ }
+ }
+});
+</script>
+</body>
+</html>

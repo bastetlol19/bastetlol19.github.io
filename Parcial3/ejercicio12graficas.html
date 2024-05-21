@@ -1,0 +1,30 @@
+EJERCICIO 2: REALIZA LAS MODIFICACIONES SOLICITADAS
+<!DOCTYPE html>
+<html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+<body>
+<canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+<script>
+const xValues = ["Programacion I", "Fisica I", "Matematicas I", "Programacion Web I", "Probabilidad", "Nucleo II"];
+const yValues = [55, 49, 44, 24, 15,34];
+const barColors = ["rgba(255,0,0,0.6)", "green","blue","orange","brown","black","white"];
+new Chart("myChart", {
+ type: "bar",
+ data: {
+ labels: xValues,
+ datasets: [{
+ backgroundColor: barColors,
+ data: yValues
+ }]
+ },
+ options: {
+ legend: {display: false},
+ title: {3
+ display: true,
+ text: "World Wine Production 2018"
+ }
+ }
+});
+</script>
+</body>
+</html
