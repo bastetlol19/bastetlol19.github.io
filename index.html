@@ -11,6 +11,9 @@
             padding: 0;
             background-color: #ffffff;
             color: #333;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
         header {
             background-color: #daba1c;
@@ -33,6 +36,9 @@
             list-style-type: none;
             padding: 0;
             margin: 0;
+        }
+        nav ul li {
+            position: relative;
         }
         nav ul li div {
             display: none;
@@ -58,6 +64,7 @@
         }
         main {
             padding: 20px;
+            flex: 1;
             text-align: center;
         }
         footer {
@@ -65,9 +72,6 @@
             color: white;
             text-align: center;
             padding: 10px 0;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
         }
         footer p {
             margin: 0;
