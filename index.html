@@ -28,9 +28,7 @@
             margin: 10px;
             border-radius: 5px;
             text-align: center;
-        }
-        nav + nav {
-            margin-top: 100px;
+            position: relative;
         }
         nav ul {
             list-style-type: none;
@@ -39,6 +37,7 @@
         }
         nav ul li {
             position: relative;
+            display: inline-block;
         }
         nav ul li div {
             display: none;
@@ -49,15 +48,19 @@
             padding: 12px;
             border-radius: 7px;
             text-align: left;
-            margin-top: 0px;
+            margin-top: 0;
+            z-index: 1000;
         }
-        nav ul li:hover div {
+        nav ul li:hover div,
+        nav ul li:focus-within div {
             display: block;
         }
         nav ul li a {
             color: white;
             text-decoration: none;
             transition: color 0.3s ease;
+            padding: 8px 16px;
+            display: block;
         }
         nav ul li a:hover {
             color: #f0f5f5;
@@ -119,85 +122,4 @@
     <nav>
         <ul>
             <li>
-                <a href="#">Prácticas 2do Parcial</a>
-                <div>
-                    <ul>
-                        <li><a href="Parcial%202/css2.html">Práctica 1</a></li>
-                        <li><a href="Parcial%202/css3.html">Práctica 2</a></li>
-                        <li><a href="Parcial%202/practica%203.html">Práctica 3</a></li>
-                        <li><a href="Parcial%202/emoji-peliculas.html">Práctica 4</a></li>
-                        <li><a href="Parcial%202/londres/londres2.html">Práctica 5</a></li>
-                        <li><a href="Parcial%202/ejercicioclase1%20(1).html">Práctica 6</a></li>
-                    </ul>
-                </div>
-            </li>
-            <li>
-                <a href="#">Retos 2do Parcial</a>
-                <div>
-                    <ul>
-                        <li><a href="Parcial%202/retoxd.html">Reto 2</a></li>
-                        <li><a href="Parcial%202/reto1%20(1).html">Reto 1</a></li>
-                    </ul>
-                </div>
-            </li>
-            <li>
-                <a href="#">Subsitios 2do Parcial</a>
-                <div>
-                    <ul>
-                        <!-- Enlaces a subsitios del 2do parcial si los hay -->
-                    </ul>
-                </div>
-            </li>
-        </ul>
-    </nav>
-    <nav>
-        <ul>
-            <li>
-                <a href="#">Prácticas 3er Parcial</a>
-                <div>
-                    <ul>
-                        <!-- Enlaces a prácticas del 3er parcial -->
-                        <li><a href="Parcial3/admin.html">Práctica 1</a></li>
-                        <li><a href="Parcial3/arreglos.html">Práctica 2</a></li>
-                        <li><a href="Parcial3/ejercicio8geo.html">Práctica 3</a></li>
-                        <li><a href="Parcial3/ejercicio9mapa.html">Práctica 4</a></li>
-                        <li><a href="Parcial3/ejercicio10.html">Práctica 5</a></li>
-                        <li><a href="Parcial3/ejercicio11.html">Práctica 6</a></li>
-                        <li><a href="Parcial3/ejercicio12graficas.html">Práctica 7</a></li>
-                        <li><a href="Parcial3/ejerciciosiniciales.pdf">Práctica 8</a></li>
-                        <li><a href="Parcial3/generadorparrafos.html">Práctica 9</a></li>
-                        <li><a href="Parcial3/graficasad2.html">Práctica 10</a></li>
-                    </ul>
-                </div>
-            </li>
-            <li>
-                <a href="#">Retos 3er Parcial</a>
-                <div>
-                    <ul>
-                        <!-- Enlaces a retos del 3er parcial -->
-                        <li><a href="parcial3/juegoahorcado.html">Reto 1</a></li>
-                        <li><a href="parcial3/menu.html">Reto 2</a></li>
-                        <li><a href="parcial3/testalumno2.html">Reto 3</a></li>
-                        <li><a href="parcial3/testalumnoconnombre.html">Reto 4</a></li>
-                    </ul>
-                </div>
-            </li>
-            <li>
-                <a href="#">Subsitios 3er Parcial</a>
-                <div>
-                    <ul>
-                        <!-- Enlaces a subsitios del 3er parcial si los hay -->
-                    </ul>
-                </div>
-            </li>
-        </ul>
-    </nav>
-    <main>
-        <h2>Bienvenido a mi página de inicio</h2>
-        <p>Explora las prácticas y retos de cada parcial utilizando los menús de navegación.</p>
-    </main>
-    <footer>
-        <p>&copy; 2023 Mi Página de Inicio. Todos los derechos reservados.</p>
-    </footer>
-</body>
-</html>
+                <a href="#">Prácticas 
