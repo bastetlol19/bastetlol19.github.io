@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!--Llenar el Title y los Metadatos-->
+    <title>Unidad 1 | Actividad 03</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta charset="utf-8">
+    <meta name="Autor" content="Said Jafet Garcia Mendoza">
+    <meta name="Fecha" content="12 de Febrero de 2025">
+    <meta name="Descripción" content="Parrafos y listas">
+</head>
+<body>
+    <!--Llenar el Título y pegar el contenido-->
+    <h1>Unidad 1 | Actividad 03 :: Tema (Parrafos y listas)</h1>
+    <p align = "center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum pretium nunc id tincidunt dictum. Maecenas imperdiet sem diam, eget scelerisque nibh luctus nec</p>
+    <p align = "right">Quisque id lorem ut libero tempus accumsan at eu massa. Curabitur aliquam et mi nec egestas. Phasellus euismod efficitur leo vel porta.</p>
+    <p align = "left">Curabitur non erat sed augue interdum commodo vel et dolor. Proin eget nisl id sapien fermentum accumsan. Nunc arcu nunc, sodales in tristique ac, vulputate in velit. Nullam bibendum leo sed nulla dignissim aliquet.</p>
+    
+</body>
+</html>
