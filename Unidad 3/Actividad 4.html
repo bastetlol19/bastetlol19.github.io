@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Unidad 3 | Actividad 04</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta charset="utf-8">
+    <meta name="Autor" content="Said Jafet Garcia Mendoza">
+    <meta name="Fecha" content="07 de mayo de 2025">
+    <meta name="Descripción" content="JavaScript">
+    <style>
+        i{text-transform: uppercase;color:white; background-color: navy;}
+    </style>
+</head>
+<body>
+    <h1>Unidad 3 | Actividad 04 :: (JavaScript)</h1>
+    <ol>
+        <li id="valor_1">UPSLP</li>
+        <li id="valor_2"></li>
+        <li id="valor_3"></li>
+        <li id="valor_4"></li>
+        <li id="valor_5">UASLP</li>
+        <li id="valor_6"></li>
+        <li id="valor_7"></li>
+        <li id="valor_8"><strong>ITESM (<i>San Luis Potosi</i>)</strong></li>
+        <li id="valor_9"></li>
+        <li id="valor_10"></li>
+    </ol>
+    <script>
+        //asignar valor
+        document.getElementById("valor_3").textContent = 'UVM';
+        //recuperar valor
+        let varTemp = document.getElementById("valor_1").textContent;
+        document.getElementById("valor_4").textContent = varTemp + "!!!";
+        // textContent
+        varTemp = document.getElementById("valor_8").textContent;
+        document.getElementById("valor_7").textContent = varTemp;
+        //inner text
+        varTemp = document.getElementById("valor_8").innerText;
+        document.getElementById("valor_9").innerText = varTemp;
+        //innerhtml
+        varTemp = document.getElementById("valor_8").innerHTML;
+        document.getElementById("valor_10").innerHTML = varTemp;
+        
+    </script>
+</body>
+</html>

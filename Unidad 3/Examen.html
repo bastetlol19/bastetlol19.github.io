@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora</title>
+    <!-- Bootstrap 3.3.7 CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+        .color-box {
+            width: 50px;
+            height: 25px;
+            display: inline-block;
+            margin-right: 10px;
+            border: 1px solid #ccc;
+        }
+        .label-box {
+            margin-right: 15px;
+            display: inline-block;
+            text-align: center;
+        }
+        .resultado-section {
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>JavaScript</h1>
+    <form class="form-horizontal">
+        <fieldset>
+            <legend>Calculadora</legend>
+
+            <!-- Primer operando -->
+            <div class="form-group">
+                <label class="col-md-4 control-label">Primer operando</label>
+                <div class="col-md-5">
+                    <input type="text" placeholder="Operador No. 1" class="form-control input-md">
+                </div>
+            </div>
+
+            <!-- Operación -->
+            <div class="form-group">
+                <label class="col-md-4 control-label">Operación</label>
+                <div class="col-md-5">
+                    <select class="form-control">
+                        <option>--- Selecciona ---</option>
+                        <option>Suma [ + ]</option>
+                        <option>Resta [ - ]</option>
+                        <option>Multiplica [ × ]</option>
+                        <option>Divide [ ÷ ]</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Segundo operando -->
+            <div class="form-group">
+                <label class="col-md-4 control-label">Segundo operando</label>
+                <div class="col-md-5">
+                    <input type="text" placeholder="Operador No. 2" class="form-control input-md">
+                </div>
+            </div>
+
+            <!-- Botones -->
+            <div class="form-group">
+                <div class="col-md-offset-4 col-md-5">
+                    <button type="button" class="btn btn-primary">Calcular</button>
+                    <button type="reset" class="btn btn-info">Reiniciar</button>
+                </div>
+            </div>
+
+            <!-- Resultado -->
+            <div class="form-group resultado-section">
+                <label class="col-md-4 control-label">Resultado</label>
+                <div class="col-md-5">
+                    <input type="text" placeholder="Resultado" class="form-control input-md">
+                </div>
+            </div>
+
+            <!-- Colores -->
+            <div class="form-group">
+                <div class="col-md-offset-4 col-md-8">
+                    <div class="label-box">
+                        OK<br>
+                        <div class="color-box" style="background-color: #ccffcc;"></div>
+                    </div>
+                    <div class="label-box">
+                        Empty<br>
+                        <div class="color-box" style="background-color: #e0e0e0;"></div>
+                    </div>
+                    <div class="label-box">
+                        Positive<br>
+                        <div class="color-box" style="background-color: #cce5ff;"></div>
+                    </div>
+                    <div class="label-box">
+                        Negative<br>
+                        <div class="color-box" style="background-color: #f2dede;"></div>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</div>
+</body>
+</html>

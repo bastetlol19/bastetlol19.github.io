@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Unidad 3 | Actividad 03</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta charset="utf-8">
+    <meta name="Autor" content="Said Jafet Garcia Mendoza">
+    <meta name="Fecha" content="30 de abril de 2025">
+    <meta name="Descripción" content="JavaScript">
+</head>
+<body>
+    <h1>Unidad 3 | Actividad 03 :: (JavaScript)</h1>
+    <script>
+        //Menu con las opciones (prompt)
+        /*
+        Menu de opciones:
+        1. Sumar
+        2. Restar
+        3. Multiplicar
+        4. Dividir
+        Que opcion deseas:
+        */
+        let opc = window.prompt("Menu de opciones:\n 1. Sumar\n 2. Restar\n 3. Multiplicar\n 4. Dividir\n Que opcion deseas:")
+        let val1 = window.prompt("Dame el primer valor:"); 
+        let val2 = window.prompt("Dame el segundo valor:");
+        //Instruccion para alternar operaciones
+        switch(opc){
+            case "1"://suma
+                document.write("<h3>Operacion suma </h3>");
+                document.write("<code>" + val1 + " + " + val2 + " = " + (val1 + val2) + "</code>");
+                break;
+            case "2"://resta
+                document.write("<h3>Operacion Resta </h3>");
+                document.write("<code>" + val1 + " - " + val2 + " = " + (val1 - val2) + "</code>");
+                break;
+            case "3"://mult
+                document.write("<h3>Operacion multiplicacion </h3>");
+                document.write("<code>" + val1 + " x " + val2 + " = " + (val1 * val2) + "</code>");
+                break;
+            case "4"://division
+                document.write("<h3>Operacion division </h3>");
+                document.write("<code>" + val1 + " ÷ " + val2 + " = " + (val1 / val2) + "</code>");
+                break;    
+        }
+        //Realizar la operacion y mostrar resultado en pantalla
+    </script>
+</body>
+</html>

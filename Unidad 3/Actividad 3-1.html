@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Unidad 3 | Actividad 03-1</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta charset="utf-8">
+    <meta name="Autor" content="Said Jafet Garcia Mendoza">
+    <meta name="Fecha" content="30 de abril de 2025">
+    <meta name="Descripción" content="JavaScript">
+    <style type="text/css">
+        table{border: 1px solid #c5c5c5;border-collapse: collapse;width: 50%;        }
+        th, td{text-align: left;padding: 10px;}
+        tr:nth-child(even){background-color: #00D9FF;}
+        tr:hover{background-color: deeppink;}
+    </style>
+</head>
+<body>
+    <h1>Unidad 3 | Actividad 03-1 :: (JavaScript)</h1>
+    <script>
+        let numTabla;
+        do{
+            numTabla = window.prompt("Cual tabla deseas calcular [1 - 10]");
+            numTabla = Number(numTabla);
+        }while (numTabla < 1 || numTabla > 10){
+            document.write("<table>");
+            document.write("<tr><th>No.</th><th>Suma</th><th>Multiplica</th></tr>");
+            for (let i = 0; i <= 10; i++) {
+                document.write("<tr><td>" + i + "</td><td>" + numTabla + " + " + i + " = " + (numTabla + i) + "</td><td>" + numTabla + " x " + i + " = " + (numTabla * i) + "</td></tr>");
+            }
+            
+        }
+        document.write("</table>");
+
+    </script>
+</body>
+</html>

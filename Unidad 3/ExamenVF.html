@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora</title>
+    <!-- Bootstrap 3.3.7 CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+        .color-box {
+            width: 50px;
+            height: 25px;
+            display: inline-block;
+            margin-right: 10px;
+            border: 1px solid #ccc;
+        }
+        .label-box {
+            margin-right: 15px;
+            display: inline-block;
+            text-align: center;
+        }
+        .resultado-section {
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>JavaScript</h1>
+    <form class="form-horizontal" id="calcForm">
+        <fieldset>
+            <legend>Calculadora</legend>
+
+            <div class="form-group">
+                <label class="col-md-4 control-label">Primer operando</label>
+                <div class="col-md-5">
+                    <input type="text" id="op1" placeholder="Operador No. 1" class="form-control input-md">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-4 control-label">Operación</label>
+                <div class="col-md-5">
+                    <select id="operacion" class="form-control">
+                        <option value="">--- Selecciona ---</option>
+                        <option value="+">Suma [ + ]</option>
+                        <option value="-">Resta [ - ]</option>
+                        <option value="*">Multiplica [ × ]</option>
+                        <option value="/">Divide [ ÷ ]</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-4 control-label">Segundo operando</label>
+                <div class="col-md-5">
+                    <input type="text" id="op2" placeholder="Operador No. 2" class="form-control input-md">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-4 col-md-5">
+                    <button type="button" class="btn btn-primary" onclick="calcular()">Calcular</button>
+                    <button type="reset" class="btn btn-info" onclick="reiniciar()">Reiniciar</button>
+                </div>
+            </div>
+
+            <div class="form-group resultado-section">
+                <label class="col-md-4 control-label">Resultado</label>
+                <div class="col-md-5">
+                    <input type="text" id="resultado" placeholder="Resultado" class="form-control input-md" readonly>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <div class="col-md-offset-4 col-md-8">
+                    <div class="label-box">
+                        OK<br>
+                        <input type="color" id="colorOK" value="#ccffcc" class="color-box">
+                    </div>
+                    <div class="label-box">
+                        Empty<br>
+                        <input type="color" id="colorEmpty" value="#e0e0e0" class="color-box">
+                    </div>
+                    <div class="label-box">
+                        Positive<br>
+                        <input type="color" id="colorPositive" value="#cce5ff" class="color-box">
+                    </div>
+                    <div class="label-box">
+                        Negative<br>
+                        <input type="color" id="colorNegative" value="#f2dede" class="color-box">
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</div>
+
+<script>
+    function getColorByValue(value, colors) {
+        if (value === "") return colors.empty;
+        if (isNaN(value)) return colors.empty;
+        value = parseFloat(value);
+        if (value === 0) return colors.ok;
+        if (value > 0) return colors.positive;
+        return colors.negative;
+    }
+
+    function calcular() {
+        const op1El = document.getElementById("op1");
+        const op2El = document.getElementById("op2");
+        const operacionEl = document.getElementById("operacion");
+        const resultadoEl = document.getElementById("resultado");
+
+        const val1 = op1El.value;
+        const val2 = op2El.value;
+        const operacion = operacionEl.value;
+
+        const colors = {
+            ok: document.getElementById("colorOK").value,
+            empty: document.getElementById("colorEmpty").value,
+            positive: document.getElementById("colorPositive").value,
+            negative: document.getElementById("colorNegative").value,
+        };
+
+        op1El.style.backgroundColor = getColorByValue(val1, colors);
+        op2El.style.backgroundColor = getColorByValue(val2, colors);
+        operacionEl.style.backgroundColor = operacion === "" ? colors.empty : colors.ok;
+
+        let resultado = "";
+
+        const num1 = parseFloat(val1);
+        const num2 = parseFloat(val2);
+
+        if (isNaN(num1) || isNaN(num2) || operacion === "") {
+            resultado = "Error";
+            resultadoEl.value = resultado;
+            resultadoEl.style.backgroundColor = colors.empty;
+        } else {
+            switch (operacion) {
+                case "+": resultado = num1 + num2; break;
+                case "-": resultado = num1 - num2; break;
+                case "*": resultado = num1 * num2; break;
+                case "/":
+                    if (num2 === 0) {
+                        resultado = "Error";
+                    } else {
+                        resultado = num1 / num2;
+                    }
+                    break;
+            }
+            resultadoEl.value = resultado;
+            resultadoEl.style.backgroundColor = getColorByValue(resultado, colors);
+        }
+    }
+
+    function reiniciar() {
+        document.getElementById("op1").style.backgroundColor = "";
+        document.getElementById("op2").style.backgroundColor = "";
+        document.getElementById("operacion").style.backgroundColor = "";
+        document.getElementById("resultado").style.backgroundColor = "";
+        document.getElementById("resultado").value = "";
+    }
+</script>
+</body>
+</html>
